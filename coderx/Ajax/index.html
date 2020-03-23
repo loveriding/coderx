@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ajax example</title>
+	</head>
+	<body>
+		<table id="todo-list"></table>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script type="text/javascript">
+			var url = 'http://localhost:9081/users';
+			function get(url){
+				axios.get(url).then(function(res) {
+					var items = res.data;
+					console.log(items);
+					render(items);
+					//return items.length;
+				})
+			}
+			function getPromise(url){
+				return new Promise(function(resolve) {
+
+				axios.get(url).then(function(res) {
+					var items = res.data;
+					resolve(items);
+				})
+				})
+			}
+			function getLength() {
+				var p = getPromise(url);
+				//var count = 1;
+				var count = p.then(function(v) {
+					return v.length;
+				})
+				return count - 1;
+			}
+			//get(url);
+			var item = {
+				name: 'thien',
+				location: 'phuyen'
+			}
+			function post(item) {
+			axios.post(url,item).then(function(res) {
+					console.log(res);
+				})
+			}
+			//post(item)
+			get(url);
+			var d = getLength();
+			console.log(d)
+			//console.log(url.concat('/' + getLength(url)))
+			/*axios.delete(get(url.concat('/' + getLength(url)))).then(function(res) {
+				console.log(res);
+			})*/
+			var infor = document.getElementById('todo-list');
+			function render(items) {
+					var content = items.map(function(items) {
+						return '<tr><td>' + items.name + '</td><td>' + items.location + '</td></tr>';
+					});
+					infor.innerHTML = content.join('');
+				}
+				//render(students);
+		</script>
+	</body>
+</html>

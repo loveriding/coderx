@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		button {
+		border:none;
+		border-radius: 5px;
+		cursor: pointer;
+		outline: none;
+		}
+		button:hover {background-color: #b4bfb7}
+		button:active {
+			background-color: #b4bfb7;
+			box-shadow: 0 1px #666;
+  			transform: translateY(2px);
+		}
+		div {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div><button id="demo">Click me</button>
+	</div>
+	<div id="amazing">This is amazing :v</div>
+</body>
+<script type="text/javascript">
+	var btn = document.getElementById('demo');
+	
+	 btn.addEventListener('click',onClick);
+	function onClick() {
+		var x = document.getElementById('amazing');
+		if(x.style.display == "none") {
+			x.style.display = "block";
+		}else {
+			x.style.display = "none";
+		}
+	}
+</script>
+</html>

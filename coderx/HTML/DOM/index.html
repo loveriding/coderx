@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM</title>
+</head>
+<body>
+	<ul id="todo-list">
+		<li>VO</li>
+		<li>Nam</li>
+		<li>Thien</li>
+	</ul>
+	<button onclick="insert()">Insert</button>
+	<button onclick="remove()">RemoveLast</button>
+	<button onclick="add()">UpgradeLast</button>
+	<script type="text/javascript">
+		var todoList = document.getElementById("todo-list");
+		function insert() {
+			var newTodo = document.createElement("li");
+			newTodo.textContent = "Ha My";
+			todoList.appendChild(newTodo);
+		}
+		function remove() {
+			todoList.lastElementChild.remove();
+		}
+		function add() {
+			todoList.lastElementChild.textContent = "Ha Myy"
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Select city</h1>
+  <form id="city">
+  	  <input type="checkbox" id="hn" name="hn" value="hn">
+	  <label for="hn"> Ha Noi</label><br>
+	  <input type="checkbox" id="hp" name="hp" value="hp">
+	  <label for="hp"> Hai Phong</label><br>
+	  <input type="checkbox" id="hcm" name="hcm" value="hcm">
+	  <label for="hcm"> HoChiMinh</label><br>
+	  <input type="checkbox" id="hn" name="dn" value="dn">
+	  <label for="dn"> DaNang</label><br>
+	  <input type="checkbox" id="vehicle2" name="cm" value="cm">
+	  <label for="cm"> CaMau</label><br>
+  </form>
+  <hr>
+  <p id="demo">You selected 0 city</p>
+
+</body>
+<script type="text/javascript">
+	
+	var form = document.getElementById('city');
+	form.addEventListener('change',countCity);
+	function countCity() {
+		var count = 0;
+		var list = document.getElementsByTagName('input');
+		for(let i = 0; i < list.length; i++) {
+			if(list[i].type === "checkbox" && list[i].checked === true)
+				count++;
+		}
+		document.getElementById('demo').innerText = 'You selected ' + count + ' city';
+	}
+
+
+</script>
+</html>

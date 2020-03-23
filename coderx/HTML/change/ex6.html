@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		button {
+			border:none;
+			border-radius: 5px;
+		}
+		button:active {
+			background-color: #34b7eb;
+		}
+		button,p {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<h3>Step number</h3>
+	<button id="down">-</button>
+	<p id="num">0</p>
+	<button id="up">+</button>
+</body>
+<script type="text/javascript">
+	var upButton = document.getElementById('up');
+	var downButton = document.getElementById('down');
+	upButton.addEventListener('click',up);
+	downButton.addEventListener('click',down);
+	var count = 0;
+	function up() {
+		var num = document.getElementById('num');
+		count ++;
+		num.innerHTML = count;
+	}
+	function down() {
+		var num = document.getElementById('num');
+		count --;
+		num.innerHTML = count;
+	}
+</script>
+</html>

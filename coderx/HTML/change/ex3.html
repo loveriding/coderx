@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label for="name">What is your name?</label><br>
+	<input id="name" type="text" name="name" placeholder="yourname">
+	<input id="submit" type="submit" name="submit" value="go">
+	<p id="demo"></p>
+</body>
+	<script type="text/javascript">
+		var submit = document.getElementById("submit");
+		
+		submit.addEventListener("click",yourName);
+		function yourName() {
+			var name = document.getElementById("name");
+			document.getElementById("demo").innerHTML = "Hello " +  name.value;
+		}
+	</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Todo List</h1>
+	<input id="todo" type="text" name="todo"  placeholder="todo">
+	<input id="submit" type="submit" name="submit" value="Add">
+	<hr>
+	<p id="demo"></p>
+</body>
+	<script type="text/javascript">
+		var submit = document.getElementById('submit');
+		submit.addEventListener('click',todoAdd);
+		function todoAdd() {
+			var text = document.getElementById('todo');
+			document.getElementById('demo').innerHTML =document.getElementById('demo').innerHTML +  '<p>' +  text.value + '</p>' 
+		}
+	</script>
+</html>
