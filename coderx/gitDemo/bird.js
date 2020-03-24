@@ -1,3 +1,3 @@
-function bird() {
-  this.bird = this.
+function bird(bird) {
+  this.bird = bird;
 }
